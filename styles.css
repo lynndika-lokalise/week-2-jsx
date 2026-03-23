@@ -1,57 +1,76 @@
+/* =============================================================================
+   GLOBAL RESET
+   Strips default browser spacing so spacing is predictable everywhere.
+   ============================================================================= */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* width includes padding — easier layouts */
 }
 
+/* =============================================================================
+   PAGE SHELL
+   Full-viewport centered column; warm off-white page background.
+   ============================================================================= */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f7f7f4;
+    background-color: #f7f7f4; /* page wash — slightly cooler than cards */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    min-height: 100vh; /* at least full screen height */
+    padding: 20px; /* breathing room on small screens */
 }
 
+/* =============================================================================
+   PRICING ROW
+   Horizontal row of cards; gap = space between cards; wraps if needed.
+   ============================================================================= */
 .cards-container {
     display: flex;
     flex-direction: row;
     gap: 24px;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; /* cards align to top if heights differ */
 }
 
+/* =============================================================================
+   CARD SURFACE
+   Single pricing column: fixed width, rounded corners, stacked content + button.
+   ============================================================================= */
 .card {
     display: flex;
     flex-direction: column;
-    min-height: 380px;
-    background-color: #f2f1ed;
+    min-height: 380px; /* keeps both cards similar height */
+    background-color: #f2f1ed; /* card fill — slightly darker than page */
     border-radius: 4px;
     padding: 16px;
     width: 320px;
-    flex-shrink: 0;
+    flex-shrink: 0; /* don’t squash card width in a tight row */
 }
 
+/* Upper block: title, price, list — grows; button sits at bottom via margin-top: auto */
 .card-top {
     display: flex;
     flex-direction: column;
 }
 
+/* Plan name — largest type in the card header */
 .card-title {
     font-size: 22px;
     line-height: 28px;
     font-weight: 400;
-    color: #26251e;
+    color: #26251e; /* near-black body text */
     margin-bottom: 8px;
 }
 
+/* Price line: holds amount + optional “/mo.” */
 .card-price {
     font-size: 20px;
-    color: rgba(38, 37, 30, 0.5);
+    color: rgba(38, 37, 30, 0.5); /* muted — secondary hierarchy */
     display: inline-flex;
-    align-items: baseline;
+    align-items: baseline; /* aligns $ and period on one baseline */
 }
 
 .card-price-amount {
@@ -61,20 +80,23 @@ body {
 }
 
 .card-price-period {
-    font-size: 14px;
+    font-size: 14px; /* smaller than amount */
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Wraps “Includes:” + feature list */
 .card-content {
-    margin-bottom: 32px;
+    margin-bottom: 32px; /* space before the button */
 }
 
+/* “Includes:” / “Everything in Hobby, plus:” — same style as muted price */
 .includes-text {
     font-size: 16px;
     color: rgba(38, 37, 30, 0.5);
     margin: 16px 0px;
 }
 
+/* Bullet list without default dots — we use custom checkmarks in HTML */
 .features-list {
     list-style: none;
     padding: 0;
@@ -85,9 +107,10 @@ body {
     align-items: center;
     margin-bottom: 8px;
     font-size: 16px;
-    color: #26251e;
+    color: #26251e; /* body emphasis for feature copy */
 }
 
+/* Check glyph before each line — aligned with text */
 .checkmark {
     color: #26251e;
     font-size: 14px;
@@ -95,12 +118,16 @@ body {
     font-weight: 400;
 }
 
+/* =============================================================================
+   BUTTONS
+   Pill shape; secondary = light; primary = dark. Hover/active = feedback states.
+   ============================================================================= */
 .download-button {
-    margin-top: auto;
+    margin-top: auto; /* pins button to bottom of the flex card */
     width: fit-content;
-    background-color: #e6e5e0;
+    background-color: #e6e5e0; /* secondary fill */
     border: none;
-    border-radius: 999px;
+    border-radius: 999px; /* full pill */
     padding: 14px 24px;
     font-size: 16px;
     font-weight: 500;
@@ -114,9 +141,10 @@ body {
 }
 
 .download-button:active {
-    background-color: #D8D6CE;
+    background-color: #D8D6CE; /* pressed state */
 }
 
+/* Pro CTA — inverted for contrast */
 .download-button.primary {
     background-color: #111;
     color: #fff;
@@ -130,17 +158,21 @@ body {
     background-color: #333;
 }
 
+/* =============================================================================
+   PAGE LABEL (TOP PILL)
+   Fixed to viewport top — not inside the card flow.
+   ============================================================================= */
 .page-label {
     position: fixed;
     top: 16px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* true horizontal center */
     font-size: 14px;
     color: #666;
     background: #fff;
     padding: 8px 16px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* subtle lift */
 }
 
 .page-label strong {
