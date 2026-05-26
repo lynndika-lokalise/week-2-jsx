@@ -158,6 +158,24 @@ body {
     background-color: #333;
 }
 
+.download-button.tertiary:default{
+    background-color: transparent;
+    border: 1px solid #c2c1ba;
+    color: #333;
+}
+
+.download-button.tertiary:hover{
+    background-color: transparent;
+    border: 1px solid #c2c1ba;
+    color: #ff0000;
+}
+
+.download-button.tertiary:active{
+    background-color: transparent;
+    border: 1px solid #c2c1ba;
+    color: #ff00bb;
+}
+
 /* =============================================================================
    PAGE LABEL (TOP PILL)
    Fixed to viewport top — not inside the card flow.
