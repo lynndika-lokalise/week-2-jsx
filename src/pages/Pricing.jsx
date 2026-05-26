@@ -31,9 +31,20 @@ function Pricing() {
             'Maximum context windows',
         ],
         buttonText: 'Get Pro',
-        buttonVariant: 'primary',
+        buttonVariant: 'tertiary',
     };
-
+    const entreprisePlan = {
+        title: 'very important card',
+        price: '$100/mo.',
+        includesText: 'Everything in Pro, plus:',
+        features: [
+            'Unlimited Agent requests',
+            'Unlimited Tab completions',
+            'Unlimited API requests',
+        ],
+        buttonText: 'Get Entreprise',
+        buttonVariant: 'tertiary',
+    };
     return (
         // <> is a React Fragment — groups elements without adding extra HTML divs
         <>
@@ -42,7 +53,8 @@ function Pricing() {
                 {/* The spread operator {...hobbyPlan} passes all object properties as individual props */}
                 {/* This is the same as: title="Hobby" price="Free" includesText="Includes:" etc. */}
                 <PricingCard {...hobbyPlan} />
-                <PricingCard {...proPlan} />
+                <PricingCard {...proPlan} />    
+                <PricingCard {...entreprisePlan} />
             </div>
         </>
     );

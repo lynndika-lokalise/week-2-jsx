@@ -1,17 +1,38 @@
 <!DOCTYPE html>
+<!-- Document type: tells the browser this is modern HTML5 -->
+
 <html lang="en">
+<!-- lang="en": screen readers and search use this for language -->
+
 <head>
+    <!-- Charset: ensures special characters render correctly -->
     <meta charset="UTF-8">
+
+    <!-- Viewport: makes layout scale on phones (no tiny desktop zoom) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
     <title>Pricing Plans — HTML version</title>
+
+    <!-- Fonts: warm up connection to Google Fonts (faster load) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Inter: primary typeface; weights 400–700 used in CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- All visual styling lives in styles.css -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <!-- Fixed pill at top: dev/context label, not part of the pricing UI -->
     <p class="page-label"><strong>HTML version</strong> — static markup</p>
+
+    <!-- Row of pricing cards: flex layout defined in CSS -->
     <div class="cards-container">
+
+        <!-- Card 1: Hobby tier — title, price, feature list, CTA -->
         <div class="card">
             <div class="card-top">
                 <h3 class="card-title">Hobby</h3>
@@ -36,8 +57,11 @@
                     </ul>
                 </div>
             </div>
+            <!-- Secondary button style (light gray) -->
             <button class="download-button secondary">Download</button>
         </div>
+
+        <!-- Card 2: Pro tier — same structure, different copy and primary CTA -->
         <div class="card">
             <div class="card-top">
                 <h3 class="card-title">Pro</h3>
@@ -67,6 +91,7 @@
                     </ul>
                 </div>
             </div>
+            <!-- Primary button style (dark fill) — visual emphasis on Pro -->
             <button class="download-button primary">Get Pro</button>
         </div>
     </div>
